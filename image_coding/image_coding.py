@@ -116,6 +116,7 @@ class ImageCodingXBlock(XBlock):
         correct_icon_url = self.runtime.local_resource_url(self, 'public/images/correct-icon.png')
         incorrect_icon_url = self.runtime.local_resource_url(self, 'public/images/incorrect-icon.png')
         unanswered_icon_url = self.runtime.local_resource_url(self, 'public/images/unanswered-icon.png')
+        image_coding_edx = self.runtime.local_resource_url(self, 'public/js/image_coding-edx.js')
 
 
         # bootstrap logic - trigger on empty student code
@@ -141,7 +142,8 @@ class ImageCodingXBlock(XBlock):
                                     unique_id=self.get_unique_id(),
                                     correct_icon_url=correct_icon_url,
                                     incorrect_icon_url=incorrect_icon_url,
-                                    unanswered_icon_url=unanswered_icon_url
+                                    unanswered_icon_url=unanswered_icon_url,
+                                    image_coding_edx= image_coding_edx
                                     )) 
         frag.add_css(self.resource_string('static/css/image_coding.css'))
         frag.add_javascript(self.resource_string('static/js/image_coding_view.js'))
